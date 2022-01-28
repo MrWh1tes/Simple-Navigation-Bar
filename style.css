@@ -1,0 +1,183 @@
+/* formatting */
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        font-size: 16px;
+        
+    }
+/* end formatting */
+
+/* basics */
+    body{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+        color: blanchedalmond;
+        background-color: rgba(0, 0, 0, 0.829);
+    }
+/* end basics */
+
+/* navbar */
+    nav{
+        height: 5rem;
+        width: 100%;
+        background-color: royalblue;
+    }
+    /* hide burger menu */
+    #check, .checkbtn{
+        display: none;
+    }
+
+    /* Logo */
+    label a.logo{
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 5rem;
+        padding: 0 2rem;
+        justify-self: center;
+    }
+
+    /* Menu */
+    nav ul{
+        float: right;
+    }
+
+    nav ul li{
+        line-height: 5rem;
+        display: inline-block;
+        margin-right: 3rem;
+        font-size: 1rem;
+        
+    }
+    
+    nav ul li a{
+        color: white;
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        padding: .5rem .7rem;
+        border-radius: 8px;
+
+    }
+    
+    nav ul li a:hover{
+        background-color: rgba(141, 162, 224, 0.493);
+        transition: .3s;
+    }
+/* end navbar */
+
+/* responsive */
+
+@media (max-width: 952px ) {
+    *{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 858px ) {
+    *{
+        font-size: 12px;
+    }
+
+    nav ul{
+        position: fixed;
+        height: 95vh;
+        width: 100%;
+        top: 5rem;
+        left: -100%;
+        text-align: center;
+        background-color: rgba(65, 105, 225, 0.363);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: start;
+        transition: .5s;
+
+    }
+
+    nav ul li a{
+        font-size: 2rem;
+        margin-top: 4em;
+        padding: 2rem;
+    }
+    
+    nav ul li a:hover{
+        background: none;
+        color: royalblue;
+
+    }
+
+    /* burger */
+        .checkbtn{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5rem;
+            width: 5rem;
+            cursor: pointer;
+            float: right;
+            margin-right: 2rem;
+            
+        }
+
+        .burger{
+            width: 3rem;
+            height: .3rem;
+            background: white;  /* bar color */
+            border-radius: 5px;
+            box-shadow: 0 .05rem .1rem rgba(88, 22, 22, 0.493); /* shadow color */
+            transition: all .5s ease-in-out;
+        
+        }
+
+        .burger::before,.burger::after{
+            content: '';
+            position: absolute;
+            width: 3rem;
+            height: .3rem;
+            background: white;  /* bar color */
+            border-radius: 5px;
+            box-shadow: 0 .05rem .1rem rgba(88, 22, 22, 0.493); /* shadow color */
+            transition: all .5s ease-in-out;
+            
+        }
+        
+        .burger::before{
+            
+            transform: translateY(-1em);
+        }
+        
+        .burger::after{
+            transform: translateY(1em);
+        }
+        
+        #check:checked ~ ul{
+            left: 0;
+        }
+
+        /* animation */
+            .checkbtn.open .burger {
+                transform: translateX(-4em);
+                background: transparent;
+                box-shadow: none;
+                transition: .5s;
+            }
+            .checkbtn.open .burger::before {
+                transform: rotate(45deg) translate(35px, -35px);
+            }
+            .checkbtn.open .burger::after {
+                transform: rotate(-45deg) translate(35px, 35px);
+            }
+        /* end animation */
+    /* end burger */
+}
+
+@media (max-width: 414px ) {
+    *{
+        font-size: 10px;
+    }
+}
+/* end responsive */
